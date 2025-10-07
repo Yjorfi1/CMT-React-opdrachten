@@ -4,7 +4,8 @@ function App() {
 
   return (
     <>
-      <h1>Opdracht 2 - UseEffect</h1>
+      <h1>Movie overzicht</h1>
+    <p>gagag</p>
     </>
   )
 }
