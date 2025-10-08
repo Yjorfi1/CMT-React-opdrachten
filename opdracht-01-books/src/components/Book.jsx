@@ -1,7 +1,8 @@
+
 const Book = ({title, author, image}) => {
     return ( 
         <section>
-            <img src="{image}" alt="{title}" />
+            <img id="image" src={image} alt={title} />
             <h2>{title}</h2>
             <p>{author}</p>
         </section>
