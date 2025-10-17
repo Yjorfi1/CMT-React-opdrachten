@@ -1,13 +1,28 @@
-import './App.css'
+import { useState, useEffect } from "react";
+import './App.css';
+import WelcomeMessage from './components/WelcomeMsg';
+
 
 function App() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <>
-      <h1>Movie overzicht</h1>
-    <p>gagag</p>
-    </>
-  )
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Opdracht 2 - UseEffect</h1>
+      <WelcomeMessage />
+      <h2>De huidige tijd is:</h2>
+      <p>{currentTime.toLocaleTimeString()}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;

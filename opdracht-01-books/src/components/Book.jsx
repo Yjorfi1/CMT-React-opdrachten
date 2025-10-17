@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import BookCounter from './BookCounter.jsx';
+
 
 function  Book({ title, author, image }) {
   const [aantalKeerGelezen , setAantalKeerGelezen] = useState(0);

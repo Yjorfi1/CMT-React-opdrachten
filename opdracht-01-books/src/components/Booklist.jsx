@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import BookCounter from './BookCounter.jsx';
+import BookCounter from './BookCounter.jsx';
 import Book from './Book.jsx';
 
 
@@ -27,7 +27,7 @@ const Booklist = () => {
         
       <h1>Books overzicht</h1>
        <div className="book-container">
-      {/* <BookCounter aantal={books.length} /> */}
+       <BookCounter aantal={books.length} /> 
       {books.map((book, index) => (
         <Book className="booking"
           key={index}
