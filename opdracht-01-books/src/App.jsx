@@ -1,20 +1,31 @@
-import Booklist from './components/Booklist';
-import Header from './components/Header'
-// import Layout from './components/Layout'
+
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css'
+import About from './Pages/About';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import NoPage from './Pages/Nopage';
+import Navigation from './Pages/Navigation'
 
 
 
 function App() {
 
   return (
-    <section>
-      {/* <Layout> */}
-        <Header/>
-    <Booklist/>
-{/* </Layout> */}
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<Navigation />}> 
 
-</section>
+        <Route index element={<Home />} />
+    <Route path="/about" element={<About/>}/>
+     <Route path="/home" element={<Home />}/>
+    <Route path="/contact" element={<Contact />}/> 
+    <Route pathe='*' element={<NoPage />}/>
+
+</Route>
+    
+   </Routes>
+   </BrowserRouter>
   )
 }
 

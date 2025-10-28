@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import BookCounter from './BookCounter.jsx';
+// import BookCounter from './BookCounter.jsx';
 
 
 function  Book({ title, author, image }) {
@@ -11,7 +11,7 @@ function  Book({ title, author, image }) {
   };
 
   return (
-    <section>
+    <section className="vc">
      <img id="image" src={image} alt={title} />
             <h2>{title}</h2>
             <p>{author}</p>
