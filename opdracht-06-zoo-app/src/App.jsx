@@ -1,12 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import AnimalDetail from './Pages/Animalpage';
 import './App.css'
 
 function App() {
-
   return (
-    <>
-      <h1>Opdracht 6 - Zoo app</h1>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/animal/:animalId" element={<AnimalDetail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
