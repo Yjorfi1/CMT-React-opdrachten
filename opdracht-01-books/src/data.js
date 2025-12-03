@@ -1,4 +1,4 @@
- const books = [{
+ const booksData = [{
       title: 'Harry Potter',
       author: ' J.K Rowling',
       image: './public/images/book-1.png'
