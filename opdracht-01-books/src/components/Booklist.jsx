@@ -1,25 +1,24 @@
 import { useState } from "react";
 // import BookCounter from './BookCounter.jsx';
 import Book from './Book.jsx';
+import booksData from '../data.js'
 
 
 const Booklist = () => {
-  const [books, setbooks] = useState([{
-      title: 'Harry Potter',
-      author: ' J.K Rowling',
-      image: './public/images/book-1.png'
-    },
-    {
-      title: 'Fantasia',
-      author: ' Elisabetta Dami',
-      image: './public/images/book-2.png'
-    },
-    {
-      title: 'Hunger Games',
-      author: ' Suzanne Collins',
-      image: './public/images/book-3.png'
-    },
-  ]) 
+ const {books, setBooks} = useState(booksData)
+ const [searchInput, setSearchInput] = useState('')
+
+const searchHandler = (e) => {
+let newSearch = e.target.value;
+setSearchInput(newSearch);
+const filteredBooks = booksData.filter((book) => 
+  
+  book.title.toLowerCase().includes(newSearch.toLowerCase())
+)
+setBooks(filteredBooks)
+}
+
+
 
     return ( 
 
@@ -27,7 +26,8 @@ const Booklist = () => {
         
       <h1>Books overzicht</h1>
        <div className="book-container">
-       {/* <BookCounter aantal={books.length} />  */}
+       <div className="search">   <input type="text" placeholder="zoek hier uw boek" name="search" onChange={searchHandler}/></div>
+    
       {books.map((book, index) => (
         <Book className="booking"
           key={index}
@@ -40,7 +40,7 @@ const Booklist = () => {
 
     </section>
 
-     );
-}
+    )};
+    
  
 export default Booklist;
