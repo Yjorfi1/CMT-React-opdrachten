@@ -37,7 +37,13 @@ const Booklist = () => {
            onChange={searchHandler} 
            value={searchInput}/>
            </div>
+           <div>
+            <select id='category' value={selectedCategory} onChange={filteredHandler} id=""></select>
+           </div>
 
+categories.map((category, index) => (
+  <category />
+))
         {books.map((book, index) => (
           <Book className="booking"
             key={index}
