@@ -1,8 +1,5 @@
-const layout = ({booking}) => {
-    return (
-        <div className ="layout-list">
-(booking)
-        </div>
-    )
+function Layout({ children }) {
+  return <div className="layout">{children}</div>;
 }
+
 export default Layout;

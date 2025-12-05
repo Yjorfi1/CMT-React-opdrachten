@@ -3,7 +3,7 @@ import { useState } from "react";
 // import BookCounter from './BookCounter.jsx';
 
 
-function  Book({ title, author, image }) {
+function  Book({ title, author, category, image }) {
   const [aantalKeerGelezen , setAantalKeerGelezen] = useState(0);
 
   const verhoogTeller = () => {
@@ -15,6 +15,7 @@ function  Book({ title, author, image }) {
      <img id="image" src={image} alt={title} />
             <h2>{title}</h2>
             <p>{author}</p>
+            <p>{category}</p>
       <button onClick={verhoogTeller}>
         Keer gelezen: {aantalKeerGelezen }
       </button>

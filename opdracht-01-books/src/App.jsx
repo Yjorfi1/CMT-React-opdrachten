@@ -1,30 +1,27 @@
-
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import './App.css'
-import About from './Pages/About';
-import Home from './Pages/Home';
-import Contact from './Pages/Contact';
-import NoPage from './Pages/Nopage';
-import Navigation from './Pages/Navigation'
-
-
+import { useState } from "react";
+import Header from "./components/Header";
+import Layout from "./components/Layout";
+import BookList from "./components/BookList";
+import SearchBar from "./components/SearchBar";
+import "./App.css";
 
 function App() {
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (value) => {
+    setSearch(value);
+  };
 
   return (
-   <BrowserRouter>
-   <Routes>
-    <Route path="/" element={<Navigation />}> 
-
-        <Route index element={<Home />} />
-    <Route path="/about" element={<About/>}/>
-     <Route path="/home" element={<Home />}/>
-    <Route path="/contact" element={<Contact />}/> 
-</Route>
-    
-   </Routes>
-   </BrowserRouter>
-  )
+    <>
+      <Header />
+      <Layout>
+        <h1>Amazon Best Sellers</h1>
+        <SearchBar onSearch={handleSearch} />
+        <BookList search={search} />
+      </Layout>
+    </>
+  );
 }
 
 export default App

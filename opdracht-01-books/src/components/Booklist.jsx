@@ -1,63 +1,57 @@
 import { useState } from "react";
-// import BookCounter from './BookCounter.jsx';
-import Book from './Book.jsx';
-import booksData from '../data.js'
+import Book from "./Book";
+import BookCounter from "./BookCounter";
+import { booksData, categories } from "../data/data";
 
+function BookList({ search }) {
+  const [books, setBooks] = useState(booksData);
+  const [selectedCategory, setSelectedCategory] = useState("Alle");
 
-const Booklist = () => {
-  const [ books, setBooks ] = useState(booksData)
-  const [searchInput, setSearchInput] = useState('')
+  function filterHandler(e) {
+    const category = e.target.value;
+    setSelectedCategory(category);
 
-  const searchHandler = (e) => {
-    let newSearch = e.target.value;
-    setSearchInput(newSearch);
-    const filteredBooks = booksData.filter((book) =>
-
-      book.title.toLowerCase().includes(newSearch.toLowerCase())
-    )
-    setBooks(filteredBooks)
-  }
-  const handleChange = (e) =>{
-    e.preventdDefault();
-    setSearchInput(e.target.value);
+    if (category === "Alle") {
+      setBooks(booksData);
+    } else {
+      const filtered = booksData.filter((book) => book.category === category);
+      setBooks(filtered);
+    }
   }
 
-
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
+    <div className="booklist">
+      <BookCounter aantal={filteredBooks.length} />
+      <div className="filter">
+        <label htmlFor="category">Filter op categorie: </label>
+        <select id="category" value={selectedCategory} onChange={filterHandler}>
+          {categories.map((cat, index) => (
+            <option key={index} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
 
-    <section >
-
-      <h1>Books overzicht</h1>
-      <div className="book-container">
-        <div className="search">  
-           <input type="text" 
-           placeholder="zoek hier uw boek" 
-           name='search'
-           onChange={searchHandler} 
-           value={searchInput}/>
-           </div>
-           <div>
-            <select id='category' value={selectedCategory} onChange={filteredHandler} id=""></select>
-           </div>
-
-categories.map((category, index) => (
-  <category />
-))
-        {books.map((book, index) => (
-          <Book className="booking"
+      {filteredBooks.length > 0 ? (
+        filteredBooks.map((book, index) => (
+          <Book
             key={index}
             title={book.title}
             author={book.author}
             image={book.image}
+            category={book.category}
           />
-        ))}
-      </div>
+        ))
+      ) : (
+        <p>Geen boeken gevonden.</p>
+      )}
+    </div>
+  );
+}
 
-    </section>
-
-  )
-};
-
-
-export default Booklist;
+export default BookList;

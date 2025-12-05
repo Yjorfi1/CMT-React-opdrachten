@@ -1,10 +1,5 @@
-// import React from 'react';
-// import { useState } from "react";
-// const aantal = ({aantal}) => {
-//     return (  
-//         <h2>Totaal aantal boeken in de lijst: {aantal}</h2> 
-//     );}
+function BookCounter({ aantal }) {
+  return <h2>Hoeveel boeken zijn er nu: {aantal}</h2>;
+}
 
-    
-// export default BookCounter;
-
+export default BookCounter;
