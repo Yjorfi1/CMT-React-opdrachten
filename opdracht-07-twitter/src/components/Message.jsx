@@ -3,7 +3,7 @@ const Message = ({name, message}) => {
         <>
     
         <h2>{name}</h2>
-        <p>{message}</p>
+        <p> {message}</p>
         </>
      );
 }
