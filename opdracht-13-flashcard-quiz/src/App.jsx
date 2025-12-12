@@ -1,10 +1,12 @@
 import './App.css'
+import data from './data.js';
+import FlashCardList from './components/FlashCardList.jsx';
 
-function App() {
-
+function App(){
   return (
     <>
-      <h1>Opdracht 13 - Flashcard Quiz</h1>
+      <h1>Flashcards</h1>
+      <FlashCardList data={data} />
     </>
   )
 }

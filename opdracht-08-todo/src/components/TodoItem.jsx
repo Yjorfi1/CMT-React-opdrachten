@@ -2,7 +2,7 @@ const TodoItem = ({message}) => {
     return ( 
         <>
     
-        <p>● {message}</p>
+        <p class="font-bold text-blue-500">● {message}</p>
         </>
      );
 }

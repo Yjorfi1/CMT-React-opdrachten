@@ -11,11 +11,12 @@ console.log(message)
 
 let name="persoon"
   return (
-    <>
-      <h1>Opdracht 8 - Todo</h1>
-      <CreateTodo textInput={textInput} setMessage={setMessage} setTextInput={setTextInput} message={message}/>
+    < >
+    <div >
+      <h1 class="font-bold text-blue-500">Opdracht 8 - Todo</h1>
+      <CreateTodo  textInput={textInput} setMessage={setMessage} setTextInput={setTextInput} message={message}/>
       <TodoList message={message}/>
-
+</div>
     </>
   )
 }
