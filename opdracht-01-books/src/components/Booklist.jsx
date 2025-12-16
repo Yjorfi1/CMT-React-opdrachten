@@ -45,6 +45,11 @@ function BookList({ search }) {
             author={book.author}
             image={book.image}
             category={book.category}
+            desc={book.desc}
+
+            releaseyear={book.releaseyear}
+
+            pages={book.pages}
           />
         ))
       ) : (

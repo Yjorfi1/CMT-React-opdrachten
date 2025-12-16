@@ -12,16 +12,19 @@ function App() {
     setSearch(value);
   };
 
+
   return (
     <>
       <Header />
       <Layout>
+       
         <h1>Amazon Best Sellers</h1>
         <SearchBar onSearch={handleSearch} />
         <BookList search={search} />
+       
       </Layout>
     </>
   );
-}
 
+}
 export default App

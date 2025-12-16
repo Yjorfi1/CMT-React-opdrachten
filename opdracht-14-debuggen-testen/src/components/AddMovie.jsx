@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 
 const AddMovie = ({ onAdd })  => {
   const [movie, setMovie] = useState('');

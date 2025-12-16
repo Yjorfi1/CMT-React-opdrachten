@@ -7,14 +7,41 @@ h1{
   color: white;
   font-size: 5vh;
 }
+.book{
+  display: flex;
+}
 
+.book-inner{
+  Position: relative;
+Width: 100%;
+Height: 100%;
+Transition: transform 0.6s;
+Transform-style: preserve-3d;
 
+}
 .book-container {
-  display: grid;
+  display: flex;
   gap: 50px 100px;
+  flex-direction:row;
   grid-template-columns: auto auto auto;
   padding: 10px;
-  right: 50%;
+  Perspective: 1000px;
+Cursor: pointer;
+  
+}
+.book-front, .book-back{
+Width: 100%;
+Height: 100%;
+Backface-visibility: hidden;
+Background-color: white;
+Border-radius: 10px;
+Padding: 20px;
+}
+.book-back{
+  Transform: rotateY(180deg);
+Display: flex;
+Flex-direction: column;
+Justify-content: center;
 }
 
 .book-container div {
@@ -24,9 +51,25 @@ h1{
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  right: 110%;
+  right: 50%;
+  Perspective: 1000px;
+Cursor: pointer;
+Height: 550px;
+width: 400px;
 }
+.book-back h2 {
 
+Font-size: 24px;
+Margin-bottom: 15px;
+Color: #4a90e2
+}
+.book-back p {
+Font-size: 14px;
+Line-height: 1.6;
+Margin-bottom: 10px;
+Color: #333;
+
+}
 
 #image{
   width: 300px;
