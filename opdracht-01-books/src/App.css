@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(34, 32, 32);
+  background-color: rgb(225, 190, 190);
 }
 
 h1{
@@ -21,6 +21,7 @@ Transform-style: preserve-3d;
 }
 .book-container {
   display: flex;
+  flex-direction: row;
   gap: 50px 100px;
   flex-direction:row;
   grid-template-columns: auto auto auto;
@@ -29,7 +30,7 @@ Transform-style: preserve-3d;
 Cursor: pointer;
   
 }
-.book-front, .book-back{
+/* .book-front, .book-back{
 Width: 100%;
 Height: 100%;
 Backface-visibility: hidden;
@@ -42,19 +43,19 @@ Padding: 20px;
 Display: flex;
 Flex-direction: column;
 Justify-content: center;
-}
+} */
 
 .book-container div {
   color: rgb(66, 52, 52);
-  background-color: #e9d4d4;
-  border: 1px solid black;
+  background-color: #c48080;
+  border: 1px solid rgb(158, 85, 85);
   padding: 20px;
   font-size: 30px;
   text-align: center;
   right: 50%;
   Perspective: 1000px;
 Cursor: pointer;
-Height: 550px;
+Height: 650px;
 width: 400px;
 }
 .book-back h2 {
