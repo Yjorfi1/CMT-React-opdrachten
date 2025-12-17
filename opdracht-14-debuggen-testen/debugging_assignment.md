@@ -132,15 +132,15 @@ Maak een nieuw bestand `RAPPORTAGE.md` in je project folder en documenteer:
 ```markdown
 ## Bug Fixes
 
-### Bug 1: [Beschrijving]
-- **Probleem:** [Wat ging er mis?]
-- **Oorzaak:** [Waarom ging het mis?]  
-- **Oplossing:** [Hoe heb je het opgelost?]
+### Bug 1: [oneindig render loop]
+- **Probleem:** Het maakte een oneindige render loop
+- **Oorzaak:** Het stond niet in de functie
+- **Oplossing:** door de "setMovie('');" lijn te verwijderen
 
-### Bug 2: [Beschrijving]
-- **Probleem:** [Wat ging er mis?]
-- **Oorzaak:** [Waarom ging het mis?]
-- **Oplossing:** [Hoe heb je het opgelost?]
+### Bug 2: [key component]
+- **Probleem:** bij de console log stond er dat elk lijst een key nodig had
+- **Oorzaak:** er ging niks mis behalve bij de console log
+- **Oplossing:** door key={index} bij de movielist te doen
 ```
 
 ### **Test Report Template:**
@@ -150,12 +150,31 @@ Maak een nieuw bestand `RAPPORTAGE.md` in je project folder en documenteer:
 ### User Story 1: ✅ PASSED
 - Criterium 1: ✅ PASSED
 - Criterium 2: ✅ PASSED
-- etc.
+- Criterium 3: ✅ PASSED
+- Criterium 4: ✅ PASSED
+- Criterium 5: ✅ PASSED
+- Criterium 6: ✅ PASSED
 
-### User Story 2: ❌ FAILED
+
+### User Story 2: ✅ PASSED
 - Criterium 1: ✅ PASSED
-- Criterium 2: ❌ FAILED - [Reden waarom]
-```
+- Criterium 2: ✅ PASSED
+- Criterium 3: ✅ PASSED
+- Criterium 4: ✅ PASSED
+
+
+### User Story 3: ✅ PASSED
+- Criterium 1: ✅ PASSED
+- Criterium 2: ✅ PASSED
+- Criterium 3: ✅ PASSED
+
+
+### User Story 1: ✅ PASSED
+- Criterium 1: ✅ PASSED
+- Criterium 2: ✅ PASSED
+- Criterium 3: ✅ PASSED
+
+
 
 ## 💡 Hints
 
