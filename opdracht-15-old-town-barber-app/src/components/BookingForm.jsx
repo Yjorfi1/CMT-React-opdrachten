@@ -1,6 +1,15 @@
 // BookingForm Component - datum input voorbeeld
 // de rest van het formulier en component maak je zelf
-<div>
+const BookingForm = () => {
+
+  function UserForm() {
+  const [formData, setFormData] = useState({
+    service: "",
+    date: "",
+    tijd: "",
+  });
+  
+  return ( <div>
   <label className="block font-medium mb-1">Datum *</label>
   <input
     type="date"
@@ -9,4 +18,9 @@
     min={new Date().toISOString().split('T')[0]}
     className="w-full p-2 border rounded"
   />
-</div>
+</div> );
+}
+}
+export default BookingForm;
+
+
