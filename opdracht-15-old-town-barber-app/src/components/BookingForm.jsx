@@ -29,14 +29,14 @@ const Appointment = ({saveAppointment}) => {
 </select>
 
 
-    {/* <label className="block font-medium mb-1">Datum *</label>
+    <label className="block font-medium mb-1">Datum *</label>
   <input
     type="date"
     value={formData.date}
     onChange={(e) => setFormData(prev => ({...prev, date: e.target.value}))}
     min={new Date().toISOString().split('T')[0]}
     className="w-full p-2 border rounded"
-  /> */}
+  />
  
 <label htmlFor="time">Kies een tijd:</label>
 <input type="time" name="time" min="09:00" max="17:00"  value={FormData.time}/>
