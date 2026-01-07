@@ -1,17 +1,44 @@
-import './App.css';
+import { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import UserProfile from './components/UserProfile';
-import ShopInfo from './components/ShopInfo';
-import BookingForm from './components/BookingForm';
+import { getUserProfile, setUserProfile } from './utils/localStorage.js';
+import ShopInfo from './components/ShopInfo.jsx';
+import BookingForm from './components/BookingForm.jsx';
+ 
 function App() {
-
+  const [profile, setProfile] = useState(null);
+ 
+  useEffect(() => {
+    const savedProfile = getUserProfile();
+    setProfile(savedProfile);
+  }, []);
+ 
+  const handleSave = (profileData) => {
+    setUserProfile(profileData);
+    setProfile(profileData);
+    toast.success('Profiel is aangemaakt');
+  };
+ 
   return (
     <>
-      <h1>Opdracht 15 - Barber</h1>
-<UserProfile/>
-<ShopInfo/>
-<BookingForm/>
+      <ToastContainer
+        position='top-right'
+        autoClose={3000}
+        hideProgressBar={false}
+      />
+      
+      {!profile ? (
+        <UserProfile saveProfile={handleSave} />
+      ) : (
+        <section>
+          <h1>Barbershop</h1>
+          <ShopInfo/>
+          <BookingForm/>
+        </section>
+      )}
     </>
   );
 }
-
+ 
 export default App;

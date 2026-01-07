@@ -1,68 +1,31 @@
-import { useState, useEffect } from "react";
 
-function UserProfile() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
+import { useState } from "react";
+import { toast } from 'react-toastify';
+const UserProfile = ({saveProfile}) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
-  useEffect(() => {
-    const savedForm = localStorage.getItem("UserProfile");
-    if (savedForm) {
-      setForm(JSON.parse(savedForm));
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        if(!name.trim() || !email.trim() || !phone.trim()){
+            toast.error("Vul alle velden in 😡");
+            return;
+        }
+        saveProfile({name, email, phone})
     }
-  }, []);
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
+    return (
+    <section>
+        <h2>Jouw profiel</h2>
+        <form onSubmit={handleSubmit}>
+            <input type="text" placeholder='naam' value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="email" placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder='telefoon' value={phone} onChange={(e) => setPhone(e.target.value)} />
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    localStorage.setItem("UserProfile", JSON.stringify(form));
-    alert("Opgeslagen");
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        className="form-name"
-        type="text"
-        name="name"
-        value={form.name}
-        placeholder="Naam"
-        onChange={handleChange}
-        required
-      /><br />
-
-      <input
-        className="form-email"
-        type="email"
-        name="email"
-        value={form.email}
-        placeholder="E-mail"
-        onChange={handleChange}
-        required
-      /><br />
-
-      <input
-        className="form-phone"
-        type="text"
-        name="phone"
-        value={form.phone}
-        placeholder="Telefoonnummer"
-        onChange={handleChange}
-        required
-      /><br />
-
-      <input className="form-button" type="submit" value="Verzenden" />
-    </form>
-  );
+            <button type="submit">Profiel aanmaken</button>
+        </form>
+    </section>);
 }
-
 export default UserProfile;
+

@@ -1,7 +1,7 @@
 const ShopInfo = () => {
     return ( <>
     <div>
-        <h1>naam: Klein restaurant</h1>
+        <h1>naam: stom kapper</h1>
 
         <h2>Openingstijden</h2>
         <p>Maandag	Gesloten</p>
@@ -15,12 +15,11 @@ const ShopInfo = () => {
 
     </div>
     <div>
-        <h2>Menu:</h2>
-        <p>Tosti zonder kaas</p>
-        <p>Veggie burger gemaakt in labaratorioum</p>
-        <p>tomaten soep</p>
-        <p>Amerikaanse pannenkoeken</p>
-        <p>Ongezonde smoothies</p>
+        <h2>Opties:</h2>
+        <p>Knipbeurt = 30 euro </p>
+        <p>Haar verfen = duur</p>
+        <p>Alles afscheren = 20 euro</p>
+        <p>Haar wassen = 10 euro</p>
 
     </div>
     
