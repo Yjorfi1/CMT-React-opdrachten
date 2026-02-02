@@ -55,8 +55,8 @@ export default function App() {
           appointments={appointments}
           onNewAppointments={handleUpdate}
         />
-'        <ShopInfo shop={shopData} />
-'        <BookingsList appointments={appointments} />
+        <ShopInfo shop={shopData} />
+        <BookingsList appointments={appointments} />
 
       </div>
     </div>

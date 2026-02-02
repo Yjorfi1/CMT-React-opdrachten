@@ -38,8 +38,8 @@ const Form = ({ user, shop, appointments, onNewAppointments }) => {
  
       <input
         type="date"
+          value={date}
         min={new Date().toISOString().split("T")[0]}
-        value={date}
         onChange={(e) => setDate(e.target.value)}
       />
  
