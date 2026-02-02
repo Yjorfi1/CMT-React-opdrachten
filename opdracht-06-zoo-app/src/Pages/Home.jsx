@@ -29,3 +29,9 @@ return (
     </section>
   );}
   export default Home;
+
+  const Home = () => {
+    return (  );
+  }
+   
+  export default Home;
